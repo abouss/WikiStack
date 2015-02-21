@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
+var models = require('../models/');
 
 
 router.use(bodyParser.urlencoded({
@@ -18,7 +19,6 @@ router.get('/', function(req, res) {
 
 
 router.post('/submit', function(req, res) {
-	var models = require('../models/');
 
 	// STUDENT ASSIGNMENT:
 	// add definitions of the `title`, `body` and `url_name` variables here
@@ -27,7 +27,6 @@ router.post('/submit', function(req, res) {
 
 	var title = req.body.title;
 	var body = req.body.body;
-	console.log(req.body.title);
 
 	var url_name = generateUrl_name(title);
 
