@@ -5,22 +5,14 @@ var models = require('../models/');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	
-	var docs = models.Page.find(function (err, pages) {
-		
-      if (err) {
-        onErr(err, callback);
-      } else {
-        //mongoose.connection.close();
-        console.log(pages);
-        callback("", pages);
-    }
+	var docs = models.Page.find(function (err, docs) {
+		if (err) return console.error(err);
+  		console.log(docs);
+
+  		res.render('index', {docs: docs});
 
 	});
 
-
-
-  	res.render('index', docs);
 });
 
 module.exports = router;

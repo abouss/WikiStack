@@ -1,22 +1,17 @@
 {% extends "layout.html" %}
 
-<ul>
-  {% for doc in docs %}
-  	<p>WHAT</p>
-    <li><a href='#'></a></li>
-  {% endfor %}
-</ul>
-
-
 
 {% block content %}
   <div class="page-header">
     <h1>Browse WikiStack</h1>
   </div>
 
-  <li><a href="#">About Me</a></li>
-  <li><a href="#">My Projects</a></li>
-  <li><a href="#">My City</a></li>
-  <li><a href="#">My Code</a></li>
+
+	<ul>
+  	{% for doc in docs %}
+    	<li><a href={{doc.url_name}}>{{doc.title}}</a></li>
+  	{% endfor %}
+	</ul>
+
 
 {% endblock %}
