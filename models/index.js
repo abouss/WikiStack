@@ -30,7 +30,7 @@ User = mongoose.model('User', userSchema);
 //  return this.name.first + ' ' + this.name.last;
 //});
 
-pageSchema.virtual('url_name.full').get(function () {
+pageSchema.virtual('full_route').get(function () {
     return this.url_name;
 });
 

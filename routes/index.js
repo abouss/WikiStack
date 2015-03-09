@@ -7,9 +7,9 @@ var models = require('../models/');
 router.get('/', function(req, res, next) {
 	var docs = models.Page.find(function (err, docs) {
 		if (err) return console.error(err);
-  		console.log(docs);
+		console.log(docs);
 
-  		res.render('index', {docs: docs});
+		res.render('index', {docs: docs});
 
 	});
 
@@ -18,11 +18,11 @@ router.get('/', function(req, res, next) {
 router.get('/wiki/:url', function(req, res) {
 	var url = req.params.url;
 
-    var docs = models.Page.find({url_name: url}, function (err, data) {
+	var docs = models.Page.find({url_name: url}, function (err, data) {
 		if (err) return console.error(err);
-  		console.log(data);
+		console.log(data);
 
-  		res.render('show', {docs: data});
+		res.render('show', {docs: data});
 
 	});
 
